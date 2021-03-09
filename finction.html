@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Функция</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+        /* фон - дорога */
+        .background {
+            background-image: url('road.jpg');
+            background-size: 100% 100%;
+            height: 400px;
+        }
+        /* девочка с позишн абсолют */
+        .human {
+            background-image: url('player.png');
+            background-size: 100% 100%;
+            height: 130px;
+            width: 50px;
+
+            position: absolute;
+            transition: 1s;
+            left: 50px;
+            top: 10px;
+        }
+
+        .chat {
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <!-- див с фоном картинкой -->
+    <div class="background">
+        <!-- див с фоном картинкой -->
+        <div class="human">
+        </div>
+    </div>
+    <p class="chat">
+
+    </p>
+    <script>
+        let numLeft = 50;
+        let numRight = 50;
+        let numTop = 50;
+        let numBottom = 50;
+        let chat = document.querySelector('.chat');
+        let girl = document.querySelector('.human');
+
+
+        function moveRight(argument) {
+            numRight = numRight + argument;
+            girl.style.left = numRight + 'px';
+        }
+
+
+        function moveLeft(argument) {
+            numLeft = numLeft - argument;
+            girl.style.left = numLeft + 'px';
+        }
+
+
+        function moveTop(argument) {
+            numTop = numTop - argument;
+            girl.style.top = numTop + 'px';
+        }
+
+
+        function moveBottom(argument) {
+            numBottom = numBottom + argument;
+            girl.style.top = numBottom + 'px';
+        }
+
+        function talk(argument) {
+            document.querySelector('.chat').innerHTML = argument
+        }
+        /* Ряд заданий.
+        0. Функцию moveLeft(), которая перемещает девочку влево, мы создали вместе.
+        1. Создай функцию moveRight(), которая перемещает девочку вправо.
+        2. Создай функцию moveBottom(), которая перемещает девочку вниз.
+        3. Создай функцию moveTop(), которая перемещает девочку вверх.
+        4. Создай функцию talk() то что пишем в аргументе выводится в тег <p> с классом chat. Посмотри видео zadanie4.mp4 */
+
+
+    </script>
+</body>
+</html>
